@@ -1,64 +1,87 @@
-import React, { useState } from 'react';
-import { Paper, Button, Box } from '@mui/material';
-import { styled, keyframes } from '@mui/system';
+import React, { useState } from "react";
+import { Paper, Button, Box, Grid } from "@mui/material";
+import { styled } from "@mui/system";
+import { useSwipeable } from "react-swipeable";
 
-const flipAnimation = keyframes`
-  from {
-    transform: perspective(600px) rotateY(0deg);
-  }
-  to {
-    transform: perspective(600px) rotateY(-180deg);
-  }
-`;
-
-const Page = styled(Paper)(({ theme }) => ({
-  width: '400px',
-  height: '400px',
-  position: 'absolute',
-  backfaceVisibility: 'hidden',
-  transformStyle: 'preserve-3d',
+const PageContainer = styled(Box)(({ theme }) => ({
+  perspective: "1000px",
+  width: "100%",
+  height: "40rem",
+  position: "relative",
+  overflow: "hidden",
 }));
 
-const FlippablePage = styled(Box)(({ flipped }) => ({
-  position: 'relative',
-  transform: flipped ? 'rotateY(-180deg)' : 'rotateY(0deg)',
-  transformStyle: 'preserve-3d',
-  transition: 'transform 1s',
+const Page = styled(Paper)(({ theme, isActive }) => ({
+  width: "100%",
+  height: "100%",
+  position: isActive ? "relative" : "absolute",
+  backfaceVisibility: "hidden",
+  transformStyle: "preserve-3d",
+  transform: isActive ? "rotateY(0deg)" : "rotateY(-180deg)",
+  transition: "transform 1s",
+  top: 0,
+  left: 0,
 }));
 
 function PageFlipEffect() {
-  const [flipped, setFlipped] = useState(false);
+  const pages = [
+    { content: "Página 1", backgroundColor: "lightblue" },
+    { content: "Página 2", backgroundColor: "lightcoral" },
+    { content: "Página 3", backgroundColor: "lightgreen" },
+    { content: "Página 4", backgroundColor: "gray" },
+  ];
 
-  const handleFlipPage = () => {
-    setFlipped((prev) => !prev);
-  };
+  const totalPages = pages.length;
+
+  const [currentPage, setCurrentPage] = useState(0);
+
+  // Configura los manejadores de deslizamiento
+  const handlers = useSwipeable({
+    onSwipedLeft: () => {
+      setCurrentPage((prevPage) =>
+        prevPage < totalPages - 1 ? prevPage + 1 : prevPage
+      );
+    },
+    onSwipedRight: () => {
+      setCurrentPage((prevPage) => (prevPage > 0 ? prevPage - 1 : prevPage));
+    },
+    preventDefaultTouchmoveEvent: true,
+    trackTouch: true,
+  });
+
+  // Opcionalmente, oculta los botones en dispositivos móviles
+  const isMobile = window.innerWidth <= 768;
 
   return (
-    <div style={{ perspective: '1000px' }}>
-      <FlippablePage flipped={flipped}>
-        <Page elevation={4} sx={{ backgroundColor: 'lightblue' }}>
-          <h2>Página 1</h2>
-          <Button variant="contained" onClick={handleFlipPage}>
-            Voltear
-          </Button>
-        </Page>
+    <PageContainer {...handlers}>
+      {pages.map((page, index) => (
         <Page
-          elevation={4}
+          key={index}
+          isActive={index === currentPage}
           sx={{
-            backgroundColor: 'lightcoral',
-            transform: 'rotateY(180deg)',
-            position: 'absolute',
-            top: 0,
-            left: 0,
+            backgroundColor: page.backgroundColor,
+            zIndex: totalPages - index,
           }}
         >
-          <h2>Página 2</h2>
-          <Button variant="contained" onClick={handleFlipPage}>
-            Voltear
-          </Button>
+          <Grid
+            xs={12}
+            container
+            sx={{
+              backgroundColor: "red",
+              display: "flex",
+              justifyContent: "space-between",
+              padding: "1rem",
+              height: "90%",
+            }}
+          >
+            <Grid xs={12} item alignContent={'center'} alignItems={'center'} justifyContent={'center'}>
+              <h1>hola</h1>
+            </Grid>
+          </Grid>
+          <h2 style={{ textAlign: "center" }}>{page.content}</h2>
         </Page>
-      </FlippablePage>
-    </div>
+      ))}
+    </PageContainer>
   );
 }
 
