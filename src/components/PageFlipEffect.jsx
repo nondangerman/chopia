@@ -1,38 +1,11 @@
 import React, { useState } from "react";
-import { Paper, Button, Box, Grid } from "@mui/material";
-import { styled } from "@mui/system";
+import { Paper, Button, Box, Grid, Typography } from "@mui/material";
 import { useSwipeable } from "react-swipeable";
-
-const PageContainer = styled(Box)(({ theme }) => ({
-  perspective: "1000px",
-  width: "100%",
-  height: "40rem",
-  position: "relative",
-  overflow: "hidden",
-}));
-
-const Page = styled(Paper)(({ theme, isActive }) => ({
-  width: "100%",
-  height: "100%",
-  position: isActive ? "relative" : "absolute",
-  backfaceVisibility: "hidden",
-  transformStyle: "preserve-3d",
-  transform: isActive ? "rotateY(0deg)" : "rotateY(-180deg)",
-  transition: "transform 1s",
-  top: 0,
-  left: 0,
-}));
+import { pages } from "./pages";
+import { Page, PageContainer } from "./styles/pageStyles";
 
 function PageFlipEffect() {
-  const pages = [
-    { content: "Página 1", backgroundColor: "lightblue" },
-    { content: "Página 2", backgroundColor: "lightcoral" },
-    { content: "Página 3", backgroundColor: "lightgreen" },
-    { content: "Página 4", backgroundColor: "gray" },
-  ];
-
   const totalPages = pages.length;
-
   const [currentPage, setCurrentPage] = useState(0);
 
   // Configura los manejadores de deslizamiento
@@ -49,9 +22,6 @@ function PageFlipEffect() {
     trackTouch: true,
   });
 
-  // Opcionalmente, oculta los botones en dispositivos móviles
-  const isMobile = window.innerWidth <= 768;
-
   return (
     <PageContainer {...handlers}>
       {pages.map((page, index) => (
@@ -67,18 +37,43 @@ function PageFlipEffect() {
             xs={12}
             container
             sx={{
-              backgroundColor: "red",
               display: "flex",
               justifyContent: "space-between",
               padding: "1rem",
               height: "90%",
             }}
           >
-            <Grid xs={12} item alignContent={'center'} alignItems={'center'} justifyContent={'center'}>
-              <h1>hola</h1>
+            <Grid
+              xs={12}
+              item
+              alignContent={"center"}
+              alignItems={"center"}
+              justifyContent={"center"}
+            >
+              <Typography variant={"h4"}>{page.title}</Typography>
+            </Grid>
+            <Grid
+              xs={12}
+              item
+              alignContent={"center"}
+              alignItems={"center"}
+              justifyContent={"center"}
+            >
+              <h1>{page.img}</h1>
+            </Grid>
+            <Grid
+              xs={12}
+              item
+              alignContent={"center"}
+              alignItems={"center"}
+              justifyContent={"center"}
+            >
+              <Typography variant={"h6"}>{page.description}</Typography>
             </Grid>
           </Grid>
-          <h2 style={{ textAlign: "center" }}>{page.content}</h2>
+          <Typography style={{ textAlign: "center" }} variant={"subtitle2"}>
+            {page.content}
+          </Typography>
         </Page>
       ))}
     </PageContainer>
