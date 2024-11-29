@@ -50,8 +50,40 @@ function PageFlipEffect() {
               alignItems={"center"}
               justifyContent={"center"}
             >
-              <Typography variant={"h4"}>{page.title}</Typography>
+              <Grid
+                xs={12}
+                item
+                alignContent={"center"}
+                alignItems={"center"}
+                justifyContent={"center"}
+              >
+                <Typography variant={"h4"}>{page.title}</Typography>
+              </Grid>
+              <Box
+                sx={{
+                  width: 300, // Ancho fijo
+                  height: 300, // Alto fijo
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  overflow: "hidden",
+                  margin: "1rem auto",
+                }}
+              >
+                <img
+                  //src={page.img} // Ruta de la imagen
+                  src={page.img}
+                  alt={page.title} // Texto alternativo
+                  style={{
+                    maxWidth: "100%",
+                    maxHeight: "100%",
+                    objectFit: "contain", // Ajusta la imagen dentro del contenedor
+                    borderRadius: "10px",
+                  }}
+                />
+              </Box>
             </Grid>
+
             <Grid
               xs={12}
               item
@@ -59,16 +91,40 @@ function PageFlipEffect() {
               alignItems={"center"}
               justifyContent={"center"}
             >
-              <h1>{page.img}</h1>
-            </Grid>
-            <Grid
-              xs={12}
-              item
-              alignContent={"center"}
-              alignItems={"center"}
-              justifyContent={"center"}
-            >
-              <Typography variant={"h6"}>{page.description}</Typography>
+              <Typography
+                sx={{
+                  background: "#c4f5c6",
+                  borderRadius: "20px", // Bordes redondeados
+                  padding: "1rem", // Espaciado interno
+                  position: "relative", // Necesario para usar pseudo-elementos
+                  boxShadow: `
+      0 4px 8px rgba(0, 0, 0, 0.1),
+      0 -4px 8px rgba(0, 0, 0, 0.1),
+      8px 0 8px rgba(0, 0, 0, 0.1),
+      -8px 0 8px rgba(0, 0, 0, 0.1)
+    `,
+                  "&:before": {
+                    content: "''",
+                    position: "absolute",
+                    top: "-10px",
+                    left: "-10px",
+                    right: "-10px",
+                    bottom: "-10px",
+                    borderRadius: "30px",
+                    background: "white",
+                    zIndex: -1,
+                    boxShadow: `
+        0 4px 10px rgba(0, 0, 0, 0.2),
+        0 -4px 10px rgba(0, 0, 0, 0.2),
+        4px 0 10px rgba(0, 0, 0, 0.2),
+        -4px 0 10px rgba(0, 0, 0, 0.2)
+      `,
+                  },
+                }}
+                variant="h6"
+              >
+                {page.description}
+              </Typography>
             </Grid>
           </Grid>
           <Typography style={{ textAlign: "center" }} variant={"subtitle2"}>
