@@ -1,23 +1,24 @@
 {
   "files": {
     "main.css": "/chopia/static/css/main.f855e6bc.css",
-    "main.js": "/chopia/static/js/main.c67640c6.js",
+    "main.js": "/chopia/static/js/main.e7f7ccd4.js",
     "static/js/453.f518d34c.chunk.js": "/chopia/static/js/453.f518d34c.chunk.js",
     "static/media/mylove.jpg": "/chopia/static/media/mylove.2f1830fbf08937d4cb7a.jpg",
     "static/media/carinio.jpg": "/chopia/static/media/carinio.c23a523e615da1efe982.jpg",
     "static/media/nocarinio.jpg": "/chopia/static/media/nocarinio.a2e1d8e73f246bd3d170.jpg",
     "static/media/first.jpg": "/chopia/static/media/first.25502f137e2b9d9fbcde.jpg",
+    "static/media/chistoso.jpg": "/chopia/static/media/chistoso.237b7b4662a2a83d936e.jpg",
     "static/media/lamashermosa.jpg": "/chopia/static/media/lamashermosa.fd6f1667a20c7bd9c304.jpg",
     "static/media/valiente.jpg": "/chopia/static/media/valiente.095c0ff09ddcc19dc1fe.jpg",
     "static/media/inteligente.jpg": "/chopia/static/media/inteligente.5ddaba57d3684e5167bc.jpg",
     "static/media/work.jpg": "/chopia/static/media/work.4443e7cfadedac348478.jpg",
     "index.html": "/chopia/index.html",
     "main.f855e6bc.css.map": "/chopia/static/css/main.f855e6bc.css.map",
-    "main.c67640c6.js.map": "/chopia/static/js/main.c67640c6.js.map",
+    "main.e7f7ccd4.js.map": "/chopia/static/js/main.e7f7ccd4.js.map",
     "453.f518d34c.chunk.js.map": "/chopia/static/js/453.f518d34c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.c67640c6.js"
+    "static/js/main.e7f7ccd4.js"
   ]
 }
