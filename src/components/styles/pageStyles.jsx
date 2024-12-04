@@ -5,7 +5,7 @@ import { useSwipeable } from "react-swipeable";
 export const PageContainer = styled(Box)(({ theme }) => ({
   perspective: "1000px",
   width: "100%",
-  height: "40rem",
+  height: "50rem",
   position: "relative",
   overflow: "hidden",
 }));

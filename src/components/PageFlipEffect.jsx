@@ -33,22 +33,39 @@ function PageFlipEffect() {
             zIndex: totalPages - index,
           }}
         >
-          <Grid
-            xs={12}
-            container
-            sx={{
-              display: "flex",
-              justifyContent: "space-between",
-              padding: "1rem",
-              height: "90%",
-            }}
-          >
+          {page.first ? (
+            <Grid
+              sx={{
+                backgroundImage: `url(${page.img})`,
+                backgroundSize: "cover", // Asegura que la imagen cubra todo el contenedor
+                backgroundPosition: "center", // Centra la imagen
+                height: "50rem", // Ajusta la altura según tus necesidades
+                width: "100%", // Ajusta el ancho al contenedor
+                padding: "2rem",
+                
+              }}
+            >
+              <Grid
+                xs={12}
+                item
+                alignContent={"center"}
+                alignItems={"center"}
+                justifyContent={"center"}
+                sx={{mt:'1rem'}}
+              >
+                <Typography variant={"h4"}>{page.title}</Typography>
+              </Grid>
+            </Grid>
+          ) : (
             <Grid
               xs={12}
-              item
-              alignContent={"center"}
-              alignItems={"center"}
-              justifyContent={"center"}
+              container
+              sx={{
+                display: "flex",
+                justifyContent: "space-between",
+                padding: "1rem",
+                height: "90%",
+              }}
             >
               <Grid
                 xs={12}
@@ -59,77 +76,84 @@ function PageFlipEffect() {
               >
                 <Typography variant={"h4"}>{page.title}</Typography>
               </Grid>
-              <Box
-                sx={{
-                  width: 300, // Ancho fijo
-                  height: 300, // Alto fijo
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  overflow: "hidden",
-                  margin: "1rem auto",
-                }}
+              <Grid
+                xs={12}
+                item
+                alignContent={"center"}
+                alignItems={"center"}
+                justifyContent={"center"}
               >
-                <img
-                  //src={page.img} // Ruta de la imagen
-                  src={page.img}
-                  alt={page.title} // Texto alternativo
-                  style={{
-                    maxWidth: "100%",
-                    maxHeight: "100%",
-                    objectFit: "contain", // Ajusta la imagen dentro del contenedor
-                    borderRadius: "10px",
+                <Box
+                  sx={{
+                    width: 300, // Ancho fijo
+                    height: 300, // Alto fijo
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    overflow: "hidden",
+                    margin: "1rem auto",
                   }}
-                />
-              </Box>
-            </Grid>
+                >
+                  <img
+                    src={page.img}
+                    alt={page.title} // Texto alternativo
+                    style={{
+                      maxWidth: "100%",
+                      maxHeight: "100%",
+                      objectFit: "contain", // Ajusta la imagen dentro del contenedor
+                      borderRadius: "10px",
+                    }}
+                  />
+                </Box>
+              </Grid>
 
-            <Grid
-              xs={12}
-              item
-              alignContent={"center"}
-              alignItems={"center"}
-              justifyContent={"center"}
-            >
-              <Typography
-                sx={{
-                  background: "#c4f5c6",
-                  borderRadius: "20px", // Bordes redondeados
-                  padding: "1rem", // Espaciado interno
-                  position: "relative", // Necesario para usar pseudo-elementos
-                  boxShadow: `
+              <Grid
+                xs={12}
+                item
+                alignContent={"center"}
+                alignItems={"center"}
+                justifyContent={"center"}
+              >
+                <Typography
+                  sx={{
+                    background: "#c4f5c6",
+                    borderRadius: "20px", // Bordes redondeados
+                    padding: "1rem", // Espaciado interno
+                    position: "relative", // Necesario para usar pseudo-elementos
+                    boxShadow: `
       0 4px 8px rgba(0, 0, 0, 0.1),
       0 -4px 8px rgba(0, 0, 0, 0.1),
       8px 0 8px rgba(0, 0, 0, 0.1),
       -8px 0 8px rgba(0, 0, 0, 0.1)
     `,
-                  "&:before": {
-                    content: "''",
-                    position: "absolute",
-                    top: "-10px",
-                    left: "-10px",
-                    right: "-10px",
-                    bottom: "-10px",
-                    borderRadius: "30px",
-                    background: "white",
-                    zIndex: -1,
-                    boxShadow: `
+                    "&:before": {
+                      content: "''",
+                      position: "absolute",
+                      top: "-10px",
+                      left: "-10px",
+                      right: "-10px",
+                      bottom: "-10px",
+                      borderRadius: "30px",
+                      background: "white",
+                      zIndex: -1,
+                      boxShadow: `
         0 4px 10px rgba(0, 0, 0, 0.2),
         0 -4px 10px rgba(0, 0, 0, 0.2),
         4px 0 10px rgba(0, 0, 0, 0.2),
         -4px 0 10px rgba(0, 0, 0, 0.2)
       `,
-                  },
-                }}
-                variant="h6"
-              >
-                {page.description}
-              </Typography>
+                    },
+                  }}
+                  variant="h6"
+                >
+                  {page.description}
+                </Typography>
+              </Grid>
             </Grid>
-          </Grid>
-          <Typography style={{ textAlign: "center" }} variant={"subtitle2"}>
+          )}
+          {/* <Typography style={{ textAlign: "center" }} variant={"subtitle2"}>
             {page.content}
-          </Typography>
+          </Typography> */}
         </Page>
       ))}
     </PageContainer>

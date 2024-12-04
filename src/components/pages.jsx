@@ -3,17 +3,17 @@ import valiente from "./images/valiente.jpg";
 import carinio from "./images/carinio.jpg";
 import nocarinio from "./images/nocarinio.jpg";
 import inteligente from "./images/inteligente.jpg";
-/* 
-import cariniosa from './images/casemonos.jpg'
-import cariniosa from './images/casemonos.jpg'
-import cariniosa from './images/casemonos.jpg' */
+import work from './images/work.jpg'
+import mylove from './images/mylove.jpg'
+import first from './images/first.jpg'
 
 export const pages = [
   {
     title: "La chica de mis sueños",
-    description: "Canelita la mas valiente <3",
-    img: valiente,
-    content: "1",
+    description: "",
+    img: first,
+    //content: "1",
+    first: true,
     backgroundColor: "lightblue",
   },
   {
@@ -21,14 +21,14 @@ export const pages = [
     description:
       "Hablar con ella es como abrir un librito 📖 lleno de ideas brillantes que quiero leer una y otra vez. Me gustaría poder chupar su cerebro 🧠🤤",
     img: inteligente,                   
-    content: "2",
+    //content: "2",
     backgroundColor: "#f2d4b0",
   },
   {
     title: "Canelita no cariñosa 🥶",
     description: `Chopi no es cariñosa con lo etraños por lo tanto no era cariñosa conmigo =( 😥`,
     img: nocarinio,
-    content: "3",
+    //content: "3",
     backgroundColor: "lightcoral",
   },
   {
@@ -36,7 +36,7 @@ export const pages = [
     description:
       "Pero cuando ya me conocio un poquito ma, descubri que si era muy muy cariniosa y vaya que si 🥰😍",
     img: carinio,
-    content: "4",
+    //content: "4",
     backgroundColor: "lightcoral",
   },
   {
@@ -44,16 +44,31 @@ export const pages = [
     description:
       "Ella siempre tiene algo para hacer una bromita que ami me hace reir mucho y ponerme de buen humor",
     img: "",
-    content: "5",
+    //content: "5",
     backgroundColor: "lightgreen",
   },
-
+  {
+    title: "Canelita ocupada 👩‍💼⚒️",
+    description:
+      "A veces tenemos muchas responsabilidades y no podemos estar siempre juntitos 😢😢 y eso me pone muy pero muy triste",
+    img: work,
+    //content: "5",
+    backgroundColor: "lightgreen",
+  },
+  {
+    title: "Canelita organizada 🕗🗓️",
+    description:
+      "Pero siempre encuentra un tiempito para poder verme y estar conmigo bien acurrucaditos 👩‍❤️‍💋‍👨 y yo amo eso 😻",
+    img: mylove,
+    //content: "5",
+    backgroundColor: "lightgreen",
+  },
   {
     title: "Canelita la mas hermosa *.*",
     description:
       "No puedo parar de observarla, es un placer visual que a veces me cuesta creer que estoy despierto",
     img: "",
-    content: "6",
+    //content: "6",
     backgroundColor: "lightgreen",
   },
 
@@ -61,7 +76,7 @@ export const pages = [
     title: "Will you be my girlfriend?",
     description: "",
     img: "",
-    content: "7",
+    //content: "7",
     backgroundColor: "gray",
   },
 
@@ -69,7 +84,7 @@ export const pages = [
     title: "Do you wanna be my girlfriend?",
     description: "Canelita chistoza :3",
     img: "",
-    content: "8",
+    //content: "8",
     backgroundColor: "lightgreen",
   },
 ];
