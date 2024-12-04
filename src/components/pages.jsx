@@ -6,6 +6,8 @@ import inteligente from "./images/inteligente.jpg";
 import work from './images/work.jpg'
 import mylove from './images/mylove.jpg'
 import first from './images/first.jpg'
+import chistoso from './images/chistoso.jpg'
+
 
 export const pages = [
   {
@@ -40,10 +42,10 @@ export const pages = [
     backgroundColor: "lightcoral",
   },
   {
-    title: "Canelita chistoza :3",
+    title: "Canelita divertida 👯🥰",
     description:
-      "Ella siempre tiene algo para hacer una bromita que ami me hace reir mucho y ponerme de buen humor",
-    img: "",
+      "Con ella es imposible aburrirse, siempre tiene bromita para hacer que ami me hace reir mucho y ponerme de buen humor",
+    img: chistoso,
     //content: "5",
     backgroundColor: "lightgreen",
   },

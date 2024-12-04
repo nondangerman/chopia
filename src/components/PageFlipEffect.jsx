@@ -39,7 +39,7 @@ function PageFlipEffect() {
                 backgroundImage: `url(${page.img})`,
                 backgroundSize: "cover", // Asegura que la imagen cubra todo el contenedor
                 backgroundPosition: "center", // Centra la imagen
-                height: "50rem", // Ajusta la altura según tus necesidades
+                height: "45rem", // Ajusta la altura según tus necesidades
                 width: "100%", // Ajusta el ancho al contenedor
                 padding: "2rem",
                 
