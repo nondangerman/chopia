@@ -49,7 +49,7 @@ export const pages = [
   {
     title: "Canelita divertida 👯🥰",
     description:
-      "Con ella es imposible aburrirse, siempre tiene algo para contarme o alguna bromita 🤭 que a mi me hace reir mucho y ponerme siempre de buen humor 🤣",
+      "Con ella es imposible aburrirse, siempre tiene algo para contarme o alguna bromita o hacemos cualquier payasada 🤭 que a mi me alegra la vida completamente y me logra poner siempre de buen humor 🤣",
     img: chistoso,
     //content: "5",
     backgroundColor: "lightgreen",
@@ -102,7 +102,7 @@ export const pages = [
   {
     title: "Ella aparte es...",
     description:
-      "👑👑👑 Amable, honesta, humilde, responsable, empatica, paciente, sensible, confianzuda, valiente, generosa, tolerante, cooperativa, sincera, leal, solidaria, agradecida, discreta, cortez, curiosa, creativa, inteligente empocionalmente, sabelotodo, prudente, capcidad analitica y la que mas destaco esss que es tremendamente alegre <3!! 👑👑👑",
+      "👑👑👑 Amable, honesta, humilde, responsable, empática, paciente, sensible, confianzuda, valiente, generosa, tolerante, cooperativa, sincera, leal, solidaria, agradecida, discreta, cortez, curiosa, creativa, inteligente emocionalmente, sabelotodo, prudente, tiene capcidad analitica y la que mas destaco esss que es tremendamente alegre <3!! 👑👑👑",
     //img: 'asdasd',
     //content: "asdasd",
     backgroundColor: "#7de1f5",
@@ -116,7 +116,7 @@ export const pages = [
     backgroundColor: "#f5a87d",
   },
   {
-    title: "Y me gustaria",
+    title: "Y me gustaría",
     description: "preguntarle una cosa más...",
     img: perritos,
     //content: "7",perroconfundido
@@ -138,7 +138,7 @@ export const pages = [
     backgroundColor: "#d47df5",
   },
   {
-    title: "So...",
+    title: "So... Queda una cosa mas",
     description: "I love you Chopia ❤️🌹",
     img: beso,
     //content: "8",
