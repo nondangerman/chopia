@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/chopia/static/css/main.f855e6bc.css",
-    "main.js": "/chopia/static/js/main.6fca9b99.js",
+    "main.js": "/chopia/static/js/main.ab072117.js",
     "static/js/453.f518d34c.chunk.js": "/chopia/static/js/453.f518d34c.chunk.js",
     "static/media/mylove.jpg": "/chopia/static/media/mylove.2f1830fbf08937d4cb7a.jpg",
     "static/media/perritos.jpg": "/chopia/static/media/perritos.ea075f878590b2739e45.jpg",
@@ -20,11 +20,11 @@
     "static/media/perroconfundido.jpg": "/chopia/static/media/perroconfundido.01c6d9c8c5693e3adaab.jpg",
     "index.html": "/chopia/index.html",
     "main.f855e6bc.css.map": "/chopia/static/css/main.f855e6bc.css.map",
-    "main.6fca9b99.js.map": "/chopia/static/js/main.6fca9b99.js.map",
+    "main.ab072117.js.map": "/chopia/static/js/main.ab072117.js.map",
     "453.f518d34c.chunk.js.map": "/chopia/static/js/453.f518d34c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.6fca9b99.js"
+    "static/js/main.ab072117.js"
   ]
 }
